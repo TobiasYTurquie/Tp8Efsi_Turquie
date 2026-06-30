@@ -555,4 +555,4 @@ package.json+1-1
 Si el proyecto sigue sin cargar, el problema es de caché/instalación, no de los archivos JS que ya revisé.
 
 yo: 
-The development server returned response error code 500
+The development server returned response error code 500"# Tp8Efsi_Turquie"  
