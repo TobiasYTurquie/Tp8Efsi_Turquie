@@ -1,6 +1,18 @@
+const path = require('path');
+
 module.exports = function(api) {
   api.cache(true);
   return {
-    presets: ['babel-preset-expo'],
+    presets: [
+      path.resolve(
+        __dirname,
+        'node_modules',
+        'expo',
+        'node_modules',
+        'babel-preset-expo',
+        'build',
+        'index.js'
+      ),
+    ],
   };
 };
