@@ -9,11 +9,12 @@
  */
 
 import 'react-native-gesture-handler';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { AppNavigator } from './app/navigation/AppNavigator';
 import { COLORS } from './app/styles/colors';
+
 
 // Mantener el splash screen visible hasta que esté listo
 SplashScreen.preventAutoHideAsync();
@@ -37,6 +38,7 @@ export default function App() {
   }, []);
 
   return (
+
     <>
       <StatusBar 
         barStyle="dark-content"
@@ -45,6 +47,7 @@ export default function App() {
       />
       <AppNavigator />
     </>
+
   );
 }
 

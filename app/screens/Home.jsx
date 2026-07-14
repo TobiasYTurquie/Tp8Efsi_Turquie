@@ -10,13 +10,13 @@
  * - Estados con useEffect para obtener datos
  */
 
-import React, { useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState, useEffect } from 'react';
 import {
   View,
   StyleSheet,
   FlatList,
-  ActivityIndicator,
-  SafeAreaView,
+  ActivityIndicator
 } from 'react-native';
 import { getPosts } from '../services/api';
 import { Header } from '../components/Header';
