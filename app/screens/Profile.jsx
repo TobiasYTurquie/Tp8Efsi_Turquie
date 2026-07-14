@@ -31,6 +31,7 @@ export const ProfileScreen = ({ route, navigation }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isFollowing, setIsFollowing] = useState(false);
+  const canGoBack = navigation.canGoBack();
 
   // Datos del perfil (simulados)
   const profileData = {
@@ -146,9 +147,13 @@ export const ProfileScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topHeader}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backButton}>← Atrás</Text>
-        </TouchableOpacity>
+        {canGoBack ? (
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.backButton}>← Atrás</Text>
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.backButtonPlaceholder} />
+        )}
         <Text style={styles.headerTitle}>Perfil</Text>
         <TouchableOpacity>
           <Text style={styles.moreButton}>⋮</Text>
@@ -201,6 +206,10 @@ const styles = StyleSheet.create({
   moreButton: {
     fontSize: 20,
     color: COLORS.primary,
+  },
+
+  backButtonPlaceholder: {
+    width: 70,
   },
 
   // PROFILE HEADER
